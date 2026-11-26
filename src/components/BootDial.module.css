@@ -1,0 +1,96 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  background: var(--paper);
+  animation: veil 200ms var(--ease-out) 440ms forwards;
+  cursor: default;
+}
+
+.dial {
+  position: relative;
+  width: 340px;
+  height: 72px;
+}
+
+/* Regla principal: marcas cada 8 px, mayor cada 40 px. */
+.beam {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      var(--steel) 0 1px,
+      transparent 1px 8px
+    );
+  background-size: 100% 12px;
+  background-position: 0 30px;
+  background-repeat: no-repeat;
+}
+
+.beam::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 42px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+/* El nonio llega desde la derecha y se detiene alineado al cero. */
+.jaw {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 2px;
+  height: 36px;
+  background: var(--live);
+  transform: translateX(118px);
+  animation: slide var(--dur-slow) var(--ease-out) forwards;
+}
+
+.vernier {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 62px;
+  height: 24px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--live) 0 1px,
+    transparent 1px 6.2px
+  );
+  background-size: 100% 8px;
+  background-position: 0 16px;
+  background-repeat: no-repeat;
+}
+
+.caption {
+  font-family: var(--font-measure);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(118px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes veil {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
