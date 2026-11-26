@@ -32,7 +32,7 @@
 | D-13 | Formas de pago y datos del comprobante interno | Pendiente grupo | Enumerar y definir formato de remito | Alto |
 | D-14 | MySQL `VECTOR` en instalación local | Pendiente verificación | La doc oficial lo ubica en HeatWave (cloud) | Alto |
 | D-15 | Proveedor/modelo de embeddings | Pendiente | Groq no documenta endpoint de embeddings | Alto |
-| D-16 | Pruebas E2E (Playwright u otra) | Pendiente grupo | La cátedra exige pruebas E2E; definir herramienta. `ub-mode` queda instalado como disciplina (TDD/mutación), pero sin test runner no hay gate automático (ver D-06) | Medio |
+| D-16 | Pruebas E2E (Playwright u otra) | Pendiente grupo | La cátedra exige pruebas E2E; definir herramienta. `ub-mode` queda instalado como disciplina (TDD/mutación), pero sin test runner no hay gate automático (ver D-06). Alternativa sin dependencias: `tsc` + `node --test` sobre los módulos puros | Medio |
 | D-17 | Datos mock ahora, seeders en backend después | Propuesta | Mocks tipados + servicios async | Bajo |
 | D-18 | Inventario y Reportes con pestañas; asistente como panel lateral | Propuesta | Menos rutas, más profundidad | Medio |
 | D-19 | Dispositivo principal del mostrador | Pendiente grupo | Probablemente notebook o PC; el informe no lo define | Alto |

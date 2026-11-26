@@ -23,6 +23,9 @@
   (`crapper`, `dryer`, `mutator`) **no** están instaladas y el frontend no tiene
   test runner: D-06 prohíbe sumar dependencias sin acuerdo y D-16 sigue
   pendiente. Sin tests no hay TDD real; no se escriben tests falsos para cumplir.
+  Alternativa sin dependencias a evaluar: un `tsconfig` de test que emita los
+  módulos puros (`ferrobot.ts`, `format.ts`, `search.ts`) y correrlos con
+  `node --test`; no agrega paquetes, pero D-16 decide si se adopta.
 - **`security-audit`** es serio y agent-neutral, pero su flujo completo pide
   subagentes y sandbox. En Windows, sin sandbox, se usa en modo fuente y se
   marcan como `needs_validation` los hallazgos que requieran ejecutar código.
