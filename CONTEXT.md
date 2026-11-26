@@ -1,6 +1,6 @@
 # CONTEXT — Ferretería POS (Taller de Integración)
 
-> Documento de contexto para retomar el proyecto en cualquier sesión. Actualizado: 24/11/2026.
+> Documento de contexto para retomar el proyecto en cualquier sesión. Actualizado: 25/11/2026.
 
 ## Visión general
 
@@ -60,11 +60,14 @@ Del texto (no de los diagramas, que son imágenes): `productos`, `variantes`, `c
 - Vite 8 + React 19 + TS 6 + CSS Modules. Node 24.19, npm 11.17.
 - **Compila** (`npm run build` OK), **lint limpio** (`npm run lint`) y corre en `http://localhost:5173/`.
 - Sin dependencias agregadas al template: sin router, sin librería de UI, sin tests.
-- **Es repositorio git** (antes no lo era).
+- **Es repositorio git** con remoto `origin` = `https://github.com/telliGS/ferrobot`.
+  Commit inicial `58b8357`; ramas `main` y `devstelli` publicadas con upstream.
+- `.gitignore` excluye `node_modules`, `dist`, `.playwright-mcp/`, `.impeccable/`, `.rederive/`
+  y archivos `.env`. `README.md` es propio del proyecto (ya no el template de Vite).
 - Documentación de apoyo: `docs/decisiones.md`, `docs/seguridad.md` (checklist para la etapa backend)
-  y `docs/referencias-ia.md` (herramientas de IA, no adoptadas).
+  y `docs/referencias-ia.md` (herramientas de IA evaluadas).
 
-## Estado de la UI (24/11/2026)
+## Estado de la UI (25/11/2026)
 
 Dirección visual: **Nonio** (metrología de taller). Contrato completo en `DESIGN.md`.
 
@@ -111,15 +114,27 @@ una medida anterior sin recorrer las intermedias. Queda la **fila que se abre** 
   total; `Escape` vuelve a la cantidad anterior; `Enter` confirma. No se reprodujo el bug reportado.
 - Checklist de seguridad para la etapa backend: `docs/seguridad.md`.
 
-Probado en navegador a 1366×768, 1296×904, 1200×760 y 700×760: sin desborde, sin errores de consola.
+Probado en navegador a 1366×768, 1296×904, 1200×760 y 700×820: sin desborde, sin errores de consola.
 Entre 1201 y 1266 px el nombre más largo se envuelve en dos líneas (fila de 72 px); desde 1267 vuelve
-a una sola línea y 57 px. A 700 px se recortan con elipsis dos nombres largos porque la columna de
-datos se queda con el ancho. Es elipsis, no desborde.
+a una sola línea y 57 px. A ≤720 px rige la misma regla de dos líneas: a 700 px “Tornillo autoperforante
+punta mecha” y “Sellador acrílico interior” se leen completos, sin elipsis ni desborde horizontal.
 
 La fila activa se mantiene a la vista al recorrer con `↓`/`↑` (`scrollIntoView` con `block: 'nearest'`):
 con listas más largas que el catálogo, la selección no puede quedar fuera de la ventana.
 
 Flujo verificado por teclado: buscar → `↓` → `←/→` medida → `Enter` agrega → `Ctrl+Enter` cobra.
+
+## Herramientas de proceso (25/11/2026)
+
+Ninguna de estas herramientas forma parte del entregable ni agrega dependencias al `package.json`:
+son skills globales de OpenCode, instaladas fuera del repositorio.
+
+| Herramienta | Estado | Nota |
+|---|---|---|
+| `ub-mode` (Uncle Bob) | instalada en `C:\Users\Guille\.config\opencode\skills\ub-mode` | TDD, refactor y commits chicos. Sus jueces `crapper`, `dryer` y `mutator` **no** están instalados y el proyecto no tiene test runner (D-16/D-06): hoy se usa como disciplina, no como gate automático |
+| `security-audit` (Cloudflare) | instalada en `C:\Users\Guille\.config\opencode\skills\security-audit` | MIT, agent-neutral. Se ejecutará cuando exista backend. Sin sandbox en Windows, limitarse a auditoría de fuente y marcar `needs_validation` |
+| `rederive` | evaluada, **no instalada** | Útil para la defensa oral (re-derivar decisiones). Requiere `python3` y bash; la PC tiene Python 3.14 vía `py` y Git Bash, pero no el comando `python3` |
+| ECC (72 agentes) y 99 skills | no adoptadas | Demasiado alcance para el proyecto; ver `docs/referencias-ia.md` |
 
 ## Referencias visuales (23/11/2026)
 
@@ -171,7 +186,8 @@ Navbar: usuario logueado, estado del asistente (Groq nube / Ollama local / offli
 - Estrategia de estilos (CSS Modules + tokens vs. Tailwind) y de iconos/fuentes (self-hosted por el requisito offline).
 - Router definitivo (`react-router-dom` vs. navegación por estado).
 - Alcance del asistente (D-33) y nombre "Ferrobot" (D-34).
-- Herramientas de IA para el proceso (ECC, `ub-mode`, repos de skills): no adoptadas; ver `docs/referencias-ia.md`.
+- Herramientas de IA para el proceso: `ub-mode` y `security-audit` instaladas como skills globales;
+  ECC, `rederive` y los repos de 99 skills, no adoptados. Ver `docs/referencias-ia.md`.
 
 ## Comandos
 

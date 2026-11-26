@@ -32,7 +32,7 @@
 | D-13 | Formas de pago y datos del comprobante interno | Pendiente grupo | Enumerar y definir formato de remito | Alto |
 | D-14 | MySQL `VECTOR` en instalación local | Pendiente verificación | La doc oficial lo ubica en HeatWave (cloud) | Alto |
 | D-15 | Proveedor/modelo de embeddings | Pendiente | Groq no documenta endpoint de embeddings | Alto |
-| D-16 | Pruebas E2E (Playwright u otra) | Pendiente grupo | La cátedra exige pruebas E2E; definir herramienta | Medio |
+| D-16 | Pruebas E2E (Playwright u otra) | Pendiente grupo | La cátedra exige pruebas E2E; definir herramienta. `ub-mode` queda instalado como disciplina (TDD/mutación), pero sin test runner no hay gate automático (ver D-06) | Medio |
 | D-17 | Datos mock ahora, seeders en backend después | Propuesta | Mocks tipados + servicios async | Bajo |
 | D-18 | Inventario y Reportes con pestañas; asistente como panel lateral | Propuesta | Menos rutas, más profundidad | Medio |
 | D-19 | Dispositivo principal del mostrador | Pendiente grupo | Probablemente notebook o PC; el informe no lo define | Alto |
@@ -51,6 +51,7 @@
 | D-32 | **Rueda de medidas** de una variante por vez | Descartado (Guille, 20/11/2026) | Se probó y se descartó: no deja comparar la escalera completa ni volver a una medida anterior sin recorrer las intermedias. Queda la fila que se abre con la regla | Bajo |
 | D-33 | **Alcance del asistente** en el mostrador | Pendiente grupo | Prototipo determinístico implementado: consulta precio, stock y medidas del catálogo; no modifica el ticket, no muestra costo/margen (D-28) ni ventas/reportes (D-04). Definir si puede agregar o modificar líneas y si el Vendedor puede ver bajo mínimo o métricas (depende de D-04 y D-12) | Alto |
 | D-34 | **Nombre "Ferrobot"** para el asistente | Pendiente grupo | Es nombre de trabajo del prototipo. No reemplaza a D-09: el grupo decide si el asistente lleva nombre propio y si ese nombre es parte de la identidad del sistema | Bajo |
+| D-35 | **Herramientas de IA de proceso** (`ub-mode`, `security-audit`, `rederive`) | Propuesta | Se instalan como skills globales de OpenCode, fuera del repo y sin dependencias para la demo. `ub-mode` como disciplina de TDD; `security-audit` para la etapa backend; `rederive` pendiente de `python3`. ECC y los 99 skills no se adoptan. Detalle en `docs/referencias-ia.md` | Bajo |
 
 ## Pendientes de verificación técnica
 
