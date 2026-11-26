@@ -3,7 +3,7 @@
 > **[Propuesta]** Checklist de referencia para cuando exista backend. No son requisitos del informe:
 > son agujeros típicos de una app hecha con IA, anotados para revisarlos antes de exponer el sistema.
 >
-> **Estado actual (24/11/2026):** el frontend es un mock local. No hay backend, base de datos,
+> **Estado actual (25/11/2026):** el frontend es un mock local. No hay backend, base de datos,
 > autenticación, red ni persistencia. **Nada de esta lista está implementado todavía.** No publicar
 > esta demo como si fuera el sistema real.
 
@@ -14,7 +14,8 @@
 | `instagram.com/p/DfDJm7qI8XV/` | Reglas de diseño para apps con IA: jerarquía, responsive, accesibilidad, skeleton loading | Criterio de interfaz; ver §1 |
 | `instagram.com/p/Dfm3fAplBjp/` | 5 agujeros: Strix, rate limit, claves fuera del código, inyección SQL, auditoría | Checklist corto; ver §2 |
 | `instagram.com/p/DfsOfH3jKp2/` | 27 puntos en 7 grupos: quién entra, claves, datos, input, tráfico, repaso, informe | Checklist completo; ver §3 |
-| `instagram.com/p/DY5v3PHMdRT/` | Sin texto legible al momento de la consulta | **Pendiente:** pedir a Guille qué contiene |
+| `instagram.com/p/DY5v3PHMdRT/` | Post de `francisco__miranda` con la leyenda “Comentá 👇”; no trata de seguridad | **Descartado** |
+| `instagram.com/p/DgJhj2pB2ga/` | 15 fallas de seguridad en apps con IA; el detalle no es accesible sin comentar | Referencia general; no se pudo verificar |
 
 ---
 
@@ -112,7 +113,7 @@
 
 ## 5. Abierto
 
-- Link 4 (`DY5v3PHMdRT`): sin texto legible; pedir a Guille qué contiene antes de sumarlo.
+- El link `DY5v3PHMdRT` quedó descartado: es un post de engagement sin contenido de seguridad.
 - D-04: qué ve el Vendedor. De eso depende el alcance real de los permisos.
 - D-14/D-15: MySQL `VECTOR` y embeddings; si no corren local, el RAG cambia de arquitectura.
 - D-16: pruebas E2E; sin ellas no se puede afirmar que los permisos funcionan.
